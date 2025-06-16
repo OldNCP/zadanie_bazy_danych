@@ -26,18 +26,6 @@ mysql -u root -p sklep < skiezka_do_bazy_sklep.sql
 python sklep.py
 ```
 
-## Demonstracja wideo
-![Video Demo](img/demo.gif)
-
-Powyższe wideo przedstawia:
-1. Uruchomienie programu
-2. Automatyczną instalację bibliotek
-3. Przeglądanie listy klientów
-4. Wyszukiwanie klienta
-5. Sprawdzanie zamówień
-6. Eksport danych do CSV
-7. Zakończenie programu
-
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
 ```python
