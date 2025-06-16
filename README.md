@@ -8,9 +8,9 @@
 
 2. Instalacja zależności:
 Program automatycznie zainstaluje wymagane biblioteki przy pierwszym uruchomieniu.
-Można też zainstalować je ręcznie:
+Jedynie jedna biblioteka musi być pobrana ręcznie:
 ```bash
-pip install mysql-connector-python colorama
+pip install psutil
 ```
 
 3. Import schematu bazy danych:
