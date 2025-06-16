@@ -5,7 +5,6 @@
 1. Wymagania systemowe:
 - Python 3.x
 - MySQL Server
-- System Windows (dla funkcji czyszczenia konsoli)
 
 2. Instalacja zależności:
 Program automatycznie zainstaluje wymagane biblioteki przy pierwszym uruchomieniu.
