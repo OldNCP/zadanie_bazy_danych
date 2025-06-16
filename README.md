@@ -2,24 +2,45 @@
 
 ## Instalacja i uruchomienie
 
-1. Wymagania:
-- Python 3.x
+## Instalacja i uruchomienie
+
+### 1. Wymagania:
+- Python 3.x ([pobierz](https://www.python.org/downloads/))
 - MySQL Server
 
-2. Instalacja zależności:
-```bash
-pip install mysql-connector-python colorama
+### 2. Instalacja bibliotek Python:
+```batch
+pip install mysql-connector-python
+pip install colorama
 ```
 
-3. Import schematu bazy danych:
+### 3. Konfiguracja bazy danych:
+
+1. Uruchom MySQL Shell:
+```batch
+mysql -u root -p
+```
+
+2. Utwórz i skonfiguruj bazę:
 ```sql
-source baza_sklep.sql
+CREATE DATABASE sklep CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE sklep;
 ```
 
-4. Uruchomienie aplikacji:
-```bash
+3. Importuj schemat bazy (w nowym oknie terminala):
+```batch
+mysql -u root -p sklep < baza_sklep.sql
+```
+
+### 4. Uruchomienie aplikacji:
+```batch
 python sklep.py
 ```
+
+> **Uwaga**: 
+> - Domyślne dane logowania: użytkownik root (bez hasła)
+> - Jeśli ustawiono hasło, należy je podać przy poleceniach mysql
+> - Upewnij się, że usługa MySQL jest uruchomiona
 
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
