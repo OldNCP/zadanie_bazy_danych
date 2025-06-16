@@ -27,7 +27,7 @@ python sklep.py
 ```
 
 ## Demonstracja wideo
-![Video Demo](https://www.youtube.com/watch?v=FTWF1_VwDFs)
+[![demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
