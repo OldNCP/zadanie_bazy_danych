@@ -23,6 +23,18 @@ source baza_sklep.sql
 python sklep.py
 ```
 
+## Demonstracja wideo
+![Video Demo](img/demo.gif)
+
+Powyższe wideo przedstawia:
+1. Uruchomienie programu
+2. Automatyczną instalację bibliotek
+3. Przeglądanie listy klientów
+4. Wyszukiwanie klienta
+5. Sprawdzanie zamówień
+6. Eksport danych do CSV
+7. Zakończenie programu
+
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
 ```python
@@ -88,14 +100,10 @@ System eksportu danych z bazy do plików CSV.
 
 Implementacja interaktywnego menu użytkownika z automatycznym czyszczeniem ekranu.
 
-## 7. Struktura programu
+## 7. Inicjalizacja programu
 ![Struktura programu](img/7.png)
 
-Kompletna struktura aplikacji z podziałem na moduły:
-- Obsługa bibliotek
-- Zarządzanie konsolą
-- Operacje bazodanowe
-- Interfejs użytkownika
+Prosta lecz wygodna inicjalizacja programu
 
 ## Autor
 [Patryk Klein]
