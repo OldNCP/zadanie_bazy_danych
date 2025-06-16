@@ -110,5 +110,9 @@ Implementacja interaktywnego menu użytkownika.
 
 Kompletna struktura aplikacji z podziałem na moduły.
 
+## 8. Demonstracja działania
+
+[![Demo systemu zarządzania sklepem]](video/demo.mp4)
+
 ## Autor
 [Klein Patryk]
