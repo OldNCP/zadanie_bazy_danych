@@ -4,23 +4,45 @@
 ![Kod instalacji bibliotek](img/1.png)
 ```python
 def sprawdz_biblioteki():
+    """Sprawdza i instaluje wymagane biblioteki."""
     wymagane_biblioteki = {
         'mysql-connector-python': 'mysql.connector',
         'colorama': 'colorama'
     }
+    
+    for paczka, nazwa_importu in wymagane_biblioteki.items():
+        if importlib.util.find_spec(nazwa_importu) is None:
+            print(f"Instalowanie biblioteki {paczka}...")
+            try:
+                subprocess.check_call([sys.executable, "-m", "pip", "install", paczka])
+                print(f"Biblioteka {paczka} została zainstalowana pomyślnie!")
+            except subprocess.CalledProcessError:
+                print(f"Błąd podczas instalacji {paczka}!")
+                exit(1)
+
+# Sprawdzenie i instalacja bibliotek
+sprawdz_biblioteki()
 ```
 
 ## 2. Połączenie z bazą danych 
 ![Kod połączenia z bazą](img/2.png)
 ```python
 class BazaDanych:
+    """Klasa obsługująca operacje na bazie danych sklepu."""
+    
     def __init__(self):
-        self.polaczenie = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="",
-            database="sklep"
-        )
+        """Inicjalizacja połączenia z bazą danych."""
+        try:
+            self.polaczenie = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="sklep"
+            )
+            self.kursor = self.polaczenie.cursor()
+        except mysql.connector.Error as err:
+            print(f"Błąd połączenia: {err}")
+            exit(1)
 ```
 
 ## 3. Zarządzanie klientami
