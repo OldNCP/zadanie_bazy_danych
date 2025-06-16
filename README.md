@@ -47,13 +47,7 @@ def sprawdz_biblioteki():
 sprawdz_biblioteki()
 ```
 
-## 2. Funkcje systemowe
-Program wykorzystuje następujące funkcje systemowe:
-- Automatyczne czyszczenie konsoli (`cls`) dla lepszej czytelności
-- Kolorowe komunikaty dzięki bibliotece colorama
-- Obsługa błędów i wyjątków
-
-## 3. Połączenie z bazą danych 
+## 2. Połączenie z bazą danych 
 ![Kod połączenia z bazą](img/2.png)
 ```python
 class BazaDanych:
@@ -74,27 +68,27 @@ class BazaDanych:
             exit(1)
 ```
 
-## 4. Zarządzanie klientami
+## 3. Zarządzanie klientami
 ![Kod zarządzania klientami](img/3.png)
 
 Funkcje do wyświetlania i wyszukiwania klientów w systemie.
 
-## 5. Obsługa zamówień
+## 4. Obsługa zamówień
 ![Kod obsługi zamówień](img/4.png)
 
 Implementacja funkcji do zarządzania zamówieniami i obliczania ich wartości.
 
-## 6. Eksport danych
+## 5. Eksport danych
 ![Kod eksportu danych](img/5.png)
 
 System eksportu danych z bazy do plików CSV.
 
-## 7. Menu główne
+## 6. Menu główne
 ![Kod menu głównego](img/6.png)
 
 Implementacja interaktywnego menu użytkownika z automatycznym czyszczeniem ekranu.
 
-## 8. Struktura programu
+## 7. Struktura programu
 ![Struktura programu](img/7.png)
 
 Kompletna struktura aplikacji z podziałem na moduły:
