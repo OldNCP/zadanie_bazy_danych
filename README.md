@@ -15,7 +15,10 @@ pip install mysql-connector-python colorama
 
 3. Import schematu bazy danych:
 ```sql
-source baza_sklep.sql
+CREATE DATABASE sklep;
+USE sklep;
+
+mysql -u root -p sklep < baza_sklep.sql
 ```
 
 4. Uruchomienie aplikacji:
