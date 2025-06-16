@@ -1,23 +1,26 @@
+import importlib.util
 import importlib
 import subprocess
 import sys
+import os 
 
 def sprawdz_biblioteki():
     """Sprawdza i instaluje wymagane biblioteki."""
     wymagane_biblioteki = {
-        'mysql-connector-python': 'mysql.connector',
+        'mysql-connector-python': 'mysql-connector-python',
         'colorama': 'colorama'
     }
     
     for paczka, nazwa_importu in wymagane_biblioteki.items():
-        if importlib.util.find_spec(nazwa_importu) is None:
-            print(f"Instalowanie biblioteki {paczka}...")
-            try:
+        try:
+            # Próba importu modułu
+            if importlib.util.find_spec(nazwa_importu) is None:
+                print(f"Instalowanie biblioteki {paczka}...")
                 subprocess.check_call([sys.executable, "-m", "pip", "install", paczka])
                 print(f"Biblioteka {paczka} została zainstalowana pomyślnie!")
-            except subprocess.CalledProcessError:
-                print(f"Błąd podczas instalacji {paczka}!")
-                exit(1)
+        except (ImportError, subprocess.CalledProcessError) as e:
+            print(f"Błąd podczas instalacji {paczka}: {str(e)}")
+            exit(1)
 
 # Sprawdzenie i instalacja bibliotek
 sprawdz_biblioteki()
@@ -28,7 +31,7 @@ import csv
 from datetime import datetime
 from colorama import init, Fore, Style
 
-init()  # Initialize colorama
+init()  # Inicjalizacja coloramy
 
 class BazaDanych:
     """Klasa obsługująca operacje na bazie danych sklepu."""
@@ -141,6 +144,7 @@ def glowna():
     baza = BazaDanych()
     
     while True:
+        os.system('cls')  # Czyszczenie konsoli przed wyświetleniem menu
         print(f"\n{Fore.BLUE}=== MENU GŁÓWNE ==={Style.RESET_ALL}")
         print(Fore.CYAN + "1. Pokaż listę klientów")
         print("2. Znajdź klienta po nazwisku")
@@ -184,5 +188,6 @@ def glowna():
         else:
             print(f"{Fore.RED}Nieprawidłowy wybór!{Style.RESET_ALL}")
 
+# Inicjalizacja programu
 if __name__ == "__main__":
     glowna()
