@@ -138,6 +138,10 @@ class BazaDanych:
         except mysql.connector.Error as err:
             print(f"Błąd: {err}")
 
+def pause():
+    """Czeka na naciśnięcie klawisza Enter."""
+    input(f"\n{Fore.YELLOW}Naciśnij Enter, aby kontynuować...{Style.RESET_ALL}")
+
 # Program główny
 def glowna():
     """Główna funkcja programu zawierająca menu użytkownika."""
@@ -157,29 +161,36 @@ def glowna():
 
         if wybor == "1":
             baza.pokaz_klientow()
+            pause()
         
         elif wybor == "2":
             nazwisko = input("Podaj nazwisko klienta: ")
             baza.znajdz_klienta(nazwisko)
+            pause()
         
         elif wybor == "3":
             try:
                 klient_id = int(input("Podaj ID klienta: "))
                 baza.pokaz_zamowienia_klienta(klient_id)
+                pause()
             except ValueError:
                 print("Błąd: ID klienta musi być liczbą!")
+                pause()
         
         elif wybor == "4":
             try:
                 zamowienie_id = int(input("Podaj ID zamówienia: "))
                 baza.oblicz_wartosc_zamowienia(zamowienie_id)
+                pause()
             except ValueError:
                 print("Błąd: ID zamówienia musi być liczbą!")
+                pause()
         
         elif wybor == "5":
             print("\nDostępne tabele: klienci, produkty, zamowienia, pozycje_zamowienia")
             nazwa_tabeli = input("Podaj nazwę tabeli do eksportu: ")
             baza.eksportuj_do_csv(nazwa_tabeli)
+            pause()
         
         elif wybor == "0":
             print(f"{Fore.GREEN}Do widzenia!{Style.RESET_ALL}")
@@ -187,6 +198,7 @@ def glowna():
         
         else:
             print(f"{Fore.RED}Nieprawidłowy wybór!{Style.RESET_ALL}")
+            pause()
 
 # Inicjalizacja programu
 if __name__ == "__main__":
