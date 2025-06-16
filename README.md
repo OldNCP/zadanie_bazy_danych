@@ -47,22 +47,27 @@ class BazaDanych:
 
 ## 3. Zarządzanie klientami
 ![Kod zarządzania klientami](img/3.png)
+
 Funkcje do wyświetlania i wyszukiwania klientów w systemie.
 
 ## 4. Obsługa zamówień
 ![Kod obsługi zamówień](img/4.png)
+
 Implementacja funkcji do zarządzania zamówieniami i obliczania ich wartości.
 
 ## 5. Eksport danych
 ![Kod eksportu danych](img/5.png)
+
 System eksportu danych z bazy do plików CSV.
 
 ## 6. Menu główne
 ![Kod menu głównego](img/6.png)
+
 Implementacja interaktywnego menu użytkownika.
 
 ## 7. Struktura programu
 ![Struktura programu](img/7.png)
+
 Kompletna struktura aplikacji z podziałem na moduły.
 
 ## Instalacja i uruchomienie
@@ -87,7 +92,7 @@ python sklep.py
 ```
 
 ## Autor
-[Twoje imię i nazwisko]
+[Klein Patryk]
 
 ## Licencja
 MIT License
