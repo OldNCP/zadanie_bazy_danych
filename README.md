@@ -1,45 +1,5 @@
 # System zarządzania sklepem komputerowym
 
-## Instalacja i uruchomienie
-
-### 1. Wymagania:
-- Python 3.x ([pobierz](https://www.python.org/downloads/))
-- MySQL Server
-
-### 2. Instalacja bibliotek Python:
-```batch
-pip install mysql-connector-python
-pip install colorama
-```
-
-### 3. Konfiguracja bazy danych:
-
-1. Uruchom MySQL Shell:
-```batch
-mysql -u root
-```
-
-2. Utwórz i skonfiguruj bazę:
-```sql
-CREATE DATABASE sklep CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE sklep;
-```
-
-3. Importuj schemat bazy (w nowym oknie terminala):
-```batch
-mysql -u root -p sklep < baza_sklep.sql
-```
-
-### 4. Uruchomienie aplikacji:
-```batch
-python sklep.py
-```
-
-> **Uwaga**: 
-> - Domyślne dane logowania: użytkownik root (bez hasła)
-> - Jeśli ustawiono hasło, należy je podać przy poleceniach mysql
-> - Upewnij się, że usługa MySQL jest uruchomiona
-
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
 ```python
@@ -51,20 +11,26 @@ def sprawdz_biblioteki():
     }
     
     for paczka, nazwa_importu in wymagane_biblioteki.items():
-        if importlib.util.find_spec(nazwa_importu) is None:
-            print(f"Instalowanie biblioteki {paczka}...")
-            try:
+        try:
+            if importlib.util.find_spec(nazwa_importu) is None:
+                print(f"Instalowanie biblioteki {paczka}...")
                 subprocess.check_call([sys.executable, "-m", "pip", "install", paczka])
                 print(f"Biblioteka {paczka} została zainstalowana pomyślnie!")
-            except subprocess.CalledProcessError:
-                print(f"Błąd podczas instalacji {paczka}!")
-                exit(1)
+        except (ImportError, subprocess.CalledProcessError) as e:
+            print(f"Błąd podczas instalacji {paczka}: {str(e)}")
+            exit(1)
 
 # Sprawdzenie i instalacja bibliotek
 sprawdz_biblioteki()
 ```
 
-## 2. Połączenie z bazą danych 
+## 2. Funkcje systemowe
+Program wykorzystuje następujące funkcje systemowe:
+- Automatyczne czyszczenie konsoli (`cls`) dla lepszej czytelności
+- Kolorowe komunikaty dzięki bibliotece colorama
+- Obsługa błędów i wyjątków
+
+## 3. Połączenie z bazą danych 
 ![Kod połączenia z bazą](img/2.png)
 ```python
 class BazaDanych:
@@ -85,34 +51,56 @@ class BazaDanych:
             exit(1)
 ```
 
-## 3. Zarządzanie klientami
+## 4. Zarządzanie klientami
 ![Kod zarządzania klientami](img/3.png)
-
 Funkcje do wyświetlania i wyszukiwania klientów w systemie.
 
-## 4. Obsługa zamówień
+## 5. Obsługa zamówień
 ![Kod obsługi zamówień](img/4.png)
-
 Implementacja funkcji do zarządzania zamówieniami i obliczania ich wartości.
 
-## 5. Eksport danych
+## 6. Eksport danych
 ![Kod eksportu danych](img/5.png)
-
 System eksportu danych z bazy do plików CSV.
 
-## 6. Menu główne
+## 7. Menu główne
 ![Kod menu głównego](img/6.png)
+Implementacja interaktywnego menu użytkownika z automatycznym czyszczeniem ekranu.
 
-Implementacja interaktywnego menu użytkownika.
-
-## 7. Struktura programu
+## 8. Struktura programu
 ![Struktura programu](img/7.png)
+Kompletna struktura aplikacji z podziałem na moduły:
+- Obsługa bibliotek
+- Zarządzanie konsolą
+- Operacje bazodanowe
+- Interfejs użytkownika
 
-Kompletna struktura aplikacji z podziałem na moduły.
+## Instalacja i uruchomienie
 
-## 8. Demonstracja działania
+1. Wymagania systemowe:
+- Python 3.x
+- MySQL Server
+- System Windows (dla funkcji czyszczenia konsoli)
 
-[![Demo systemu zarządzania sklepem]](video/demo.mp4)
+2. Instalacja zależności:
+Program automatycznie zainstaluje wymagane biblioteki przy pierwszym uruchomieniu.
+Można też zainstalować je ręcznie:
+```bash
+pip install mysql-connector-python colorama
+```
+
+3. Import schematu bazy danych:
+```sql
+source baza_sklep.sql
+```
+
+4. Uruchomienie aplikacji:
+```bash
+python sklep.py
+```
 
 ## Autor
-[Klein Patryk]
+[Twoje imię i nazwisko]
+
+## Licencja
+MIT License
