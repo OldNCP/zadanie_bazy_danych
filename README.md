@@ -1,5 +1,29 @@
 # System zarządzania sklepem komputerowym
 
+## Instalacja i uruchomienie
+
+1. Wymagania systemowe:
+- Python 3.x
+- MySQL Server
+- System Windows (dla funkcji czyszczenia konsoli)
+
+2. Instalacja zależności:
+Program automatycznie zainstaluje wymagane biblioteki przy pierwszym uruchomieniu.
+Można też zainstalować je ręcznie:
+```bash
+pip install mysql-connector-python colorama
+```
+
+3. Import schematu bazy danych:
+```sql
+source baza_sklep.sql
+```
+
+4. Uruchomienie aplikacji:
+```bash
+python sklep.py
+```
+
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
 ```python
@@ -53,54 +77,32 @@ class BazaDanych:
 
 ## 4. Zarządzanie klientami
 ![Kod zarządzania klientami](img/3.png)
+
 Funkcje do wyświetlania i wyszukiwania klientów w systemie.
 
 ## 5. Obsługa zamówień
 ![Kod obsługi zamówień](img/4.png)
+
 Implementacja funkcji do zarządzania zamówieniami i obliczania ich wartości.
 
 ## 6. Eksport danych
 ![Kod eksportu danych](img/5.png)
+
 System eksportu danych z bazy do plików CSV.
 
 ## 7. Menu główne
 ![Kod menu głównego](img/6.png)
+
 Implementacja interaktywnego menu użytkownika z automatycznym czyszczeniem ekranu.
 
 ## 8. Struktura programu
 ![Struktura programu](img/7.png)
+
 Kompletna struktura aplikacji z podziałem na moduły:
 - Obsługa bibliotek
 - Zarządzanie konsolą
 - Operacje bazodanowe
 - Interfejs użytkownika
 
-## Instalacja i uruchomienie
-
-1. Wymagania systemowe:
-- Python 3.x
-- MySQL Server
-- System Windows (dla funkcji czyszczenia konsoli)
-
-2. Instalacja zależności:
-Program automatycznie zainstaluje wymagane biblioteki przy pierwszym uruchomieniu.
-Można też zainstalować je ręcznie:
-```bash
-pip install mysql-connector-python colorama
-```
-
-3. Import schematu bazy danych:
-```sql
-source baza_sklep.sql
-```
-
-4. Uruchomienie aplikacji:
-```bash
-python sklep.py
-```
-
 ## Autor
-[Twoje imię i nazwisko]
-
-## Licencja
-MIT License
+[Patryk Klein]
