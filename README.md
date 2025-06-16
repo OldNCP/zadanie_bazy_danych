@@ -16,7 +16,7 @@ pip install colorama
 
 1. Uruchom MySQL Shell:
 ```batch
-mysql -u root -p
+mysql -u root
 ```
 
 2. Utwórz i skonfiguruj bazę:
