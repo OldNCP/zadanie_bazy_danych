@@ -26,6 +26,9 @@ mysql -u root -p sklep < skiezka_do_bazy_sklep.sql
 python sklep.py
 ```
 
+## Demonstracja wideo
+![Video Demo](img/demo.mp4)
+
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
 ```python
