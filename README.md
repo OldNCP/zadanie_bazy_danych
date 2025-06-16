@@ -2,8 +2,6 @@
 
 ## Instalacja i uruchomienie
 
-## Instalacja i uruchomienie
-
 ### 1. Wymagania:
 - Python 3.x ([pobierz](https://www.python.org/downloads/))
 - MySQL Server
