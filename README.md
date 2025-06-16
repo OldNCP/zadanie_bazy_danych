@@ -27,10 +27,10 @@ python sklep.py
 ```
 
 ## Demonstracja wideo
-![Video Demo](img/demo.mp4)
+![Video Demo](https://img.youtube.com/vi/FTWF1_VwDFs/0.jpg)](https://www.youtube.com/watch?v=FTWF1_VwDFs)
 
 ## 1. Instalacja bibliotek
-![Kod instalacji bibliotek](https://img.youtube.com/vi/FTWF1_VwDFs/0.jpg)](https://www.youtube.com/watch?v=FTWF1_VwDFs)
+![Kod instalacji bibliotek](img/1.png)
 ```python
 def sprawdz_biblioteki():
     """Sprawdza i instaluje wymagane biblioteki."""
