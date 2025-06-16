@@ -16,7 +16,7 @@ pip install psutil
 3. Import schematu bazy danych:
 ```sql
 CREATE DATABASE sklep CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
-USE sklep;
+exit
 
 mysql -u root -p sklep < baza_sklep.sql
 ```
