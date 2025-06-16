@@ -18,7 +18,7 @@ pip install psutil
 CREATE DATABASE sklep CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
 exit
 
-mysql -u root -p sklep < baza_sklep.sql
+mysql -u root -p sklep < skiezka_do_bazy_sklep.sql
 ```
 
 4. Uruchomienie aplikacji:
