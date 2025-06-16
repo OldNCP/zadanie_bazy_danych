@@ -1,5 +1,26 @@
 # System zarządzania sklepem komputerowym
 
+## Instalacja i uruchomienie
+
+1. Wymagania:
+- Python 3.x
+- MySQL Server
+
+2. Instalacja zależności:
+```bash
+pip install mysql-connector-python colorama
+```
+
+3. Import schematu bazy danych:
+```sql
+source baza_sklep.sql
+```
+
+4. Uruchomienie aplikacji:
+```bash
+python sklep.py
+```
+
 ## 1. Instalacja bibliotek
 ![Kod instalacji bibliotek](img/1.png)
 ```python
@@ -70,29 +91,5 @@ Implementacja interaktywnego menu użytkownika.
 
 Kompletna struktura aplikacji z podziałem na moduły.
 
-## Instalacja i uruchomienie
-
-1. Wymagania:
-- Python 3.x
-- MySQL Server
-
-2. Instalacja zależności:
-```bash
-pip install mysql-connector-python colorama
-```
-
-3. Import schematu bazy danych:
-```sql
-source baza_sklep.sql
-```
-
-4. Uruchomienie aplikacji:
-```bash
-python sklep.py
-```
-
 ## Autor
 [Klein Patryk]
-
-## Licencja
-MIT License
